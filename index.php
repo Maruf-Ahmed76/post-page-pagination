@@ -15,7 +15,7 @@ $DB = new DB();	//call DB class from db.php
 	<div class="row">
 		<?php
 			$per_page = 2;
-			// Get page id from pagination
+			// Get page id from pagination and get limited post
 			if (isset($_GET["page"])) {
 				$page = $_GET["page"];
 			}else{
@@ -52,7 +52,6 @@ $DB = new DB();	//call DB class from db.php
 	<div class="pagination-sec mt-4">
 		<ul class="pagination">
 		  	<?php
-		  		// end
 				$sql = "SELECT * FROM posts";
 				$result = $DB->select($sql);
 				$total_rows = mysqli_num_rows($result);

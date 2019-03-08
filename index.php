@@ -52,12 +52,6 @@ $DB = new DB();	//call DB class from db.php
 	<div class="pagination-sec mt-4">
 		<ul class="pagination">
 		  	<?php
-		  		// Select page id for Paginatin active class
-		  		if (isset($_GET["page"])) {
-		  			$page_num = $_GET["page"];
-		  		}else{
-		  			$page_num = 1;
-		  		}
 		  		// end
 				$sql = "SELECT * FROM posts";
 				$result = $DB->select($sql);
@@ -68,7 +62,7 @@ $DB = new DB();	//call DB class from db.php
 			<li class="page-item
 			<?php
 				// pagination active class
-				if($page_num == $i){
+				if($page == $i){
 					echo 'active';
 				}
 			?>
